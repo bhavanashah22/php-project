@@ -9,3 +9,11 @@ if($conn->connect_error){
 else {
 	echo "database connected";
 }
+$sql = "CREATE DATABASE shop";
+if($conn->query($sql) == true){
+   echo "database crteated";
+}
+else {
+
+	die("databse not created". $conn->error);
+}
