@@ -17,3 +17,4 @@ else {
 
 	die("databse not created". $conn->error);
 }
+hello
