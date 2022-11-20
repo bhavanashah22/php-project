@@ -17,4 +17,5 @@ else {
 
 	die("databse not created". $conn->error);
 }
+// new commnet add by akhiulesh
 
