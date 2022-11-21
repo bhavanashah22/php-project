@@ -19,7 +19,7 @@ else {
 
 	die("databse not created". $conn->error);
 }
-*/
+
 
 $sql = "CREATE TABLE my_shop (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -34,16 +34,13 @@ if ($conn->query($sql) === TRUE) {
 } else {
   echo "Error creating table: " . $conn->error;
 }
+*/
+$sql = "INSERT INTO my_shop (proname, proquntiy ,prointre)
+VALUES ('ultratech', '100', '200')";
 
-//my teble create//
+if ($conn->query($sql) === TRUE) {
+  echo "New record successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
 
-
-
-
-
-
-
-
-
-
-//my name is  bhawana //
