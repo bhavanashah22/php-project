@@ -82,7 +82,14 @@ if ($conn->query($sql) === TRUE) {
 }
 }
 }
-*/
+
+$delet = "DELETE FROM `my_shop` WHERE id=115";
+
+if ($conn->query($delet) === TRUE) {
+  echo "Record deleted ";
+} else {
+  echo " not deleted " . $conn->error;
+}*/
 
 ?>
 </body>
