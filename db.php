@@ -1,17 +1,32 @@
+<!DOCTYPE HTML>
+<html>  
+<body>
+
+<form method="POST">
+      <label for="proname">proname :</label><br>
+     <input type="text" name= "proname" ><br>
+     <label for="proquntiy">proquntiy :</label><br>
+     <input type="text" name= "proquntiy" ><br>
+    <label for="prointre">prointre :</label><br>
+     <input type="text" name= "prointre" ><br>
+    <input type="submit" name="send" value ="insert data">
+
+</form>
+
+
 <?php 
+
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname  = "fileproject";
 $conn = new mysqli($servername, $username, $password, $dbname);
-/*if($conn->connect_error){
+
+if($conn->connect_error){
 	die("database not connected". $conn->connect_error);
 }
-else {
-	echo "database connected";
-}
 
-$sql = "CREATE DATABASE  fileproject";
+/*$sql = "CREATE DATABASE  fileproject";
 if($conn->query($sql) == true){
    echo "database crteated";
 }
@@ -34,13 +49,42 @@ if ($conn->query($sql) === TRUE) {
 } else {
   echo "Error creating table: " . $conn->error;
 }
+
 */
-$sql = "INSERT INTO my_shop (proname, proquntiy ,prointre)
-VALUES ('ultratech', '100', '200')";
+
+/*if(isset($_POST['send'])){
+	
+	
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+     $proname = $_POST['proname'];
+     $proquntiy = $_POST['proquntiy'];
+     $prointre =  $_POST['prointre'];
+
+
+$insert = "INSERT INTO `my_shop`(proname , proquntiy , prointre) VALUES('".$proname ."' , '". $proquntiy . "' ,'". $prointre ."')";
+
+if ($conn->query($insert) === TRUE) {
+  echo "New record successfully";
+} else {
+  echo "Error" . $conn->error;
+}
+
+}
+} 
+$sql = "INSERT INTO my_shop (proname , proquntiy, prointre)
+VALUES ('".$proname ."' , '". $proquntiy . "' ,'". $prointre ."')";
 
 if ($conn->query($sql) === TRUE) {
-  echo "New record successfully";
+  $last_id = $conn->insert_id;
+  echo "New record created successfully. Last inserted ID is: " . $last_id;
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
+}
+}
+*/
 
+?>
+</body>
+
+</html>
