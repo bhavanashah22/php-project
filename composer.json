@@ -1,0 +1,17 @@
+{
+    "name": "ok/php-project",
+    "require": {
+        "fakerphp/faker": "^1.20"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ok\\PhpProject\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hemendra",
+            "email": "hemubirla@gmail.com"
+        }
+    ]
+}
