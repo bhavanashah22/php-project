@@ -1,11 +1,12 @@
 <!DOCTYPE HTML>
 <html> 
 	<head>
-		<title>Edit Page</title>
+		<title>Delete Page</title>
 	<style>
 	table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
+  padding: 35px 70px 50px 90px;
 }
 </style>
 
@@ -32,14 +33,16 @@ if (mysqli_num_rows($result) > 0) {
 while($row = mysqli_fetch_assoc($result)) {
  $name = $row["proname"];
  $email = $row["proquntiy"];
-	}
+
+}
 } else {
 echo "0 results";
 }
 
-if(isset($_POST['update'])){
+if(isset($_POST['delete'])){
 echo $name = $_POST['proname'];
 echo $prodcut = $_POST['proquntiy'];
+echo $id_name = $_post["id"]; 
  $sql = "DELETE FROM `my_shop` WHERE id= '".$id."' ";
 if ($conn->query($sql) === TRUE) {
  header("location:db.php");
@@ -58,6 +61,6 @@ echo "not delete " . $conn->error;
      <input type="text" name= "prointre" >
     <label for="id"> id_name </label>
     <input type="text" name= "id"  value= "">
-    <input type="submit" name="update" value ="delete data">
+    <input type="submit" name="delete" value ="delete data">
 
 </form>

@@ -5,6 +5,8 @@
 	table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
+padding: 10px 10px 10px 10px;
+
 }
 	</style>
 	</head> 
